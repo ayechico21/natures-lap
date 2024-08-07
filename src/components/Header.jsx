@@ -20,10 +20,13 @@ function Header() {
 
 const Wrapper = styled.header`
   border: 2px dotted green;
+  width: 100%;
 `;
 
 const List = styled.ul`
   border: 2px dotted blue;
+  max-width: 1200px;
+
   list-style: none;
   display: flex;
   gap: 24px;
@@ -32,10 +35,8 @@ const List = styled.ul`
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 100%;
-  max-width: 1200px;
   color: white;
-  backdrop-filter: blur(2px);
+  backdrop-filter: blur(1px);
 `;
 
 const ListItem = styled.li`
