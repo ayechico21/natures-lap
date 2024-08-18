@@ -6,7 +6,7 @@ function Header() {
   console.log(url);
   return (
     <Wrapper>
-      <img src={url} alt="" />
+      <MainImage src={url} />
       <List>
         <ListItem>Home</ListItem>
         <ListItem>Rooms</ListItem>
@@ -19,32 +19,34 @@ function Header() {
 }
 
 const Wrapper = styled.header`
-  border: 2px dotted green;
   width: 100%;
 `;
 
-const List = styled.ul`
-  border: 2px dotted blue;
-  max-width: 1200px;
+const MainImage = styled.img``;
 
+const List = styled.ul`
+  width: 100%;
+  max-width: 1200px;
+  overflow: hidden;
   list-style: none;
   display: flex;
-  gap: 24px;
+  gap: 48px;
   padding: 8px 24px;
   position: absolute;
   top: 0;
   left: 50%;
   transform: translateX(-50%);
   color: white;
-  backdrop-filter: blur(1px);
+ /*  backdrop-filter: blur(1px); */
+ background-color: hsla(0, 0%, 0%, .3);
 `;
 
 const ListItem = styled.li`
   font-weight: 600;
+  font-size: 1.2rem;
 `;
 
 const LogoListItem = styled(ListItem)`
-  border: 2px dotted brown;
   margin: 0 auto;
 `;
 

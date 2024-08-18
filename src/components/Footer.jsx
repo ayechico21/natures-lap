@@ -51,7 +51,6 @@ function Footer() {
 }
 
 const Wrapper = styled.footer`
-  border: 2px dotted blue;
   background-color: hsl(0, 0%, 20%);
   color: hsl(0, 0%, 100%);
 `;
@@ -62,11 +61,16 @@ const FooterContentWrapper = styled.div`
   padding: 24px 16px;
   display: flex;
   gap: 24px;
+  color: hsl(0, 0%, 100%);
 
   & > * {
     display: flex;
     flex-direction: column;
     gap: 16px;
+  }
+
+  & a {
+    color: currentColor;
   }
 `;
 

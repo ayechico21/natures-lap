@@ -14,7 +14,9 @@ function App() {
 }
 
 const Wrapper = styled.div`
-  border: 4px dotted red;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
 `;
 
 export default App;
