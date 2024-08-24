@@ -1,9 +1,19 @@
 import React from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 import styled from "styled-components";
 
 function Home() {
   /* const url = new URL("/mainBg.png", import.meta.url).href; */
   const url = "/room1.webp";
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleDiningNavigatio = () => {
+    navigate("/dining", { state: location, replace: true });
+  };
+  const handleRoomsNavigation = () => {
+    navigate("/rooms", { state: location, replace: true });
+  };
   return (
     <Wrapper>
       <MainCard>
@@ -18,17 +28,17 @@ function Home() {
           <p>
             Our resort is designed to provide you with an escape from the
             ordinary, immersing you in the soothing embrace of lush greenery,
-            pristine air, and breathtaking views. Whether you're seeking a
-            romantic getaway, a family vacation, or a solo retreat, Nature's Lap
-            promises an experience that rejuvenates the soul and reconnects you
-            with the beauty of the natural world.{" "}
+            pristine air, and breathtaking views. Whether you are seeking a
+            romantic getaway, a family vacation, or a solo retreat, We promise
+            an experience that rejuvenates the soul and reconnects you with the
+            beauty of the natural world.
           </p>
           <p>
             Indulge in our thoughtfully crafted experiences that range from
             serene forest walks and starlit dinners to rejuvenating spa sessions
-            and cozy fireside evenings. At Nature's Lap, we believe in the
-            luxury of simplicity, where every detail is curated to offer you a
-            serene and memorable stay.
+            and cozy fireside evenings. We believe in the luxury of simplicity,
+            where every detail is curated to offer you a serene and memorable
+            stay.
           </p>
         </InfoCard>
         <ImageWrapper>
@@ -53,13 +63,14 @@ function Home() {
             tranquil beauty of the natural world. Whether you choose a cozy room
             with garden views or a spacious suite overlooking the rolling hills,
             every detail has been carefully curated to ensure a harmonious blend
-            of elegance and comfort.{" "}
+            of elegance and comfort.
           </p>
           <p>
             From plush bedding and natural wood accents to soft lighting and
             private balconies, our rooms invite you to relax, recharge, and
             immerse yourself in the serene ambiance of our beloved resort.
           </p>
+          <NavButton onClick={handleRoomsNavigation}>Rooms</NavButton>
         </InfoCard>
       </MainCard>
       <MainCard>
@@ -72,7 +83,7 @@ function Home() {
             ingredients sourced from our organic gardens and nearby farms.
           </p>
           <p>
-            Whether you're enjoying a leisurely breakfast amidst the morning
+            Whether you are enjoying a leisurely breakfast amidst the morning
             mist, a sumptuous lunch with panoramic views, or a romantic dinner
             under the starlit sky, every meal is crafted to delight your palate.
             Our chefs blend traditional recipes with modern techniques, creating
@@ -85,6 +96,7 @@ function Home() {
             integral part of the overall experience, where every bite is a step
             closer to the heart of nature.
           </p>
+          <NavButton onClick={handleDiningNavigatio}>Dining</NavButton>
         </InfoCard>
         <ImageWrapper>
           <img src={url} />
@@ -116,5 +128,7 @@ const ImageWrapper = styled.div`
   flex: 1 1 50%;
   overflow: hidden;
 `;
+
+const NavButton = styled.button``;
 
 export default Home;

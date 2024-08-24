@@ -1,30 +1,54 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import styled from "styled-components";
 
 function Header({ scrollToFooter }) {
-  const url = new URL("/mainBg.png", import.meta.url).href;
-  console.log(url);
+  //const url = new URL("/mainBg.png", import.meta.url).href;
+  let url = "/mainBg.png";
+  const location = useLocation();
+  console.log(location);
+  if (location?.pathname?.includes("room")) url = "/room2.webp";
+  else if (location?.pathname?.includes("dining")) url = "/room4.webp";
   return (
     <Wrapper>
       <MainImage src={url} />
-
-      <List>
-        <StyledNavLink to="/">Home</StyledNavLink>
-        <StyledNavLink to="/rooms">Rooms</StyledNavLink>
-        <LogoListItem>LOGO</LogoListItem>
-        <StyledNavLink to="/dining">Restaurant</StyledNavLink>
-        <ListItem onClick={scrollToFooter}>Contact Us</ListItem>
-      </List>
+      <ListWrapper>
+        <List>
+          <StyledNavLink to="/">Home</StyledNavLink>
+          <StyledNavLink to="/rooms">Rooms</StyledNavLink>
+          <LogoListItem>LOGO</LogoListItem>
+          <StyledNavLink to="/dining">Restaurant</StyledNavLink>
+          <ListItem onClick={scrollToFooter}>Contact Us</ListItem>
+        </List>
+      </ListWrapper>
     </Wrapper>
   );
 }
 
 const Wrapper = styled.header`
   width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex; /* Center the image within the container */
+  justify-content: center; /* Center horizontally */
+  align-items: center;
 `;
 
-const MainImage = styled.img``;
+const MainImage = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+`;
+
+const ListWrapper = styled.div`
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  background-color: hsla(0, 0%, 0%, 0.3);
+`;
 
 const List = styled.ul`
   width: 100%;
@@ -34,13 +58,14 @@ const List = styled.ul`
   display: flex;
   gap: 48px;
   padding: 8px 24px;
-  position: absolute;
+  margin: 0 auto
+  /*position: absolute;
   top: 0;
   left: 50%;
   transform: translateX(-50%);
   color: white;
   /*  backdrop-filter: blur(1px); */
-  background-color: hsla(0, 0%, 0%, 0.3);
+  /*background-color: hsla(0, 0%, 0%, 0.3);*/
 `;
 
 const ListItem = styled.li`
