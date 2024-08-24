@@ -1,9 +1,9 @@
-import React from "react";
+import React, { forwardRef } from "react";
 import styled from "styled-components";
 
-function Footer() {
+function Footer(props,footerRef) {
   return (
-    <Wrapper>
+    <Wrapper ref={footerRef}>
       <FooterContentWrapper>
         <Reservations>
           <Heading>Reservations</Heading>
@@ -28,11 +28,10 @@ function Footer() {
         <PlaceInfo>
           <Heading>Logo</Heading>
           <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nostrum,
-            dolorem. Perspiciatis enim veniam eius, fuga, quam consectetur
-            numquam minima eligendi praesentium et facilis, amet consequatur eos
-            voluptatum voluptatem impedit commodi.
+            Escape to tranquility in the heart of Ballari.we strive to create
+            unforgettable experiences that connect you with nature and luxury.
           </p>
+          <p>© 2024 Natureslap Resort. All rights reserved.</p>
         </PlaceInfo>
         <Links>
           <Heading>Quick Links</Heading>
@@ -107,4 +106,4 @@ const WhiteIcon = styled(Icon)`
     brightness(102%) contrast(101%);
 `;
 
-export default Footer;
+export default forwardRef(Footer);

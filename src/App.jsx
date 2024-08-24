@@ -1,14 +1,26 @@
+import React from "react";
 import styled from "styled-components";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
-import MainView from "./components/MainView";
-import "./app.css"
+import "./app.css";
+import { Link, Route, Routes } from "react-router-dom";
+import Home from "./pages/Home";
+import Rooms from "./pages/Rooms";
+import Dining from "./pages/Dining";
 function App() {
+  const footerRef = React.useRef(null);
+  const scrollToFooter = () => {
+    footerRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
   return (
     <Wrapper>
-      <Header />
-      <MainView />
-      <Footer />
+      <Header scrollToFooter={scrollToFooter} />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/rooms" element={<Rooms />} />
+        <Route path="/dining" element={<Dining />} />
+      </Routes>
+      <Footer ref={footerRef} />
     </Wrapper>
   );
 }
