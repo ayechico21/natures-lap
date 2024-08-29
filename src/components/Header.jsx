@@ -6,7 +6,7 @@ function Header({ scrollToFooter }) {
   //const url = new URL("/mainBg.png", import.meta.url).href;
   let url = "/mainBg.png";
   const location = useLocation();
-  console.log(location);
+  console.log('location => ',JSON.stringify(location));
   if (location?.pathname?.includes("room")) url = "/room2.webp";
   else if (location?.pathname?.includes("dining")) url = "/room4.webp";
   return (
@@ -58,7 +58,7 @@ const List = styled.ul`
   display: flex;
   gap: 48px;
   padding: 8px 24px;
-  margin: 0 auto
+  margin: 0 auto;
   /*position: absolute;
   top: 0;
   left: 50%;

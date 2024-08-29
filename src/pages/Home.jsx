@@ -129,6 +129,20 @@ const ImageWrapper = styled.div`
   overflow: hidden;
 `;
 
-const NavButton = styled.button``;
+const NavButton = styled.button`
+  min-width: fit-content;
+  width: 150px;
+  max-width: 250px;
+  margin: 0 auto;
+  padding: 8px 16px;
+  border-radius: 12px;
+  color: hsl(137, 82%, 37%);
+  border: 1px solid currentColor;
+  &:hover {
+    background-color: hsl(137, 82%, 37%);
+    color: white;
+    font-weight: 600;
+  }
+`;
 
 export default Home;
