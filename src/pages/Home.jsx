@@ -3,7 +3,6 @@ import { useNavigate, useLocation } from "react-router-dom";
 import styled from "styled-components";
 
 function Home() {
-  /* const url = new URL("/mainBg.png", import.meta.url).href; */
   const url = "/pic12.webp";
   const navigate = useNavigate();
   const location = useLocation();

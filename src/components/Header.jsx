@@ -7,8 +7,8 @@ function Header({ scrollToFooter }) {
   let url = "/pic2.webp";
   const location = useLocation();
   console.log('location => ',JSON.stringify(location));
-  if (location?.pathname?.includes("room")) url = "/room2.webp";
-  else if (location?.pathname?.includes("dining")) url = "/room4.webp";
+  if (location?.pathname?.includes("room")) url = "/pic14.webp";
+  else if (location?.pathname?.includes("dining")) url = "/pic8.webp";
   return (
     <Wrapper>
       <MainImage src={url} />
