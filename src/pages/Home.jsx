@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 function Home() {
   /* const url = new URL("/mainBg.png", import.meta.url).href; */
-  const url = "/room1.webp";
+  const url = "/pic12.webp";
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -136,12 +136,15 @@ const NavButton = styled.button`
   margin: 0 auto;
   padding: 8px 16px;
   border-radius: 12px;
-  color: hsl(137, 82%, 37%);
-  border: 1px solid currentColor;
+  color: hsl(137, 82%, 27%);
+  border: 2px solid currentColor;
+  background-color: hsl(137, 82%, 95%);
+  font-weight: 600;
   &:hover {
     background-color: hsl(137, 82%, 37%);
     color: white;
     font-weight: 600;
+    
   }
 `;
 

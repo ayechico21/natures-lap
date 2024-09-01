@@ -8,15 +8,15 @@ function Footer(props,footerRef) {
         <Reservations>
           <Heading>Reservations</Heading>
           <FooterItem>
-            <WhiteIcon src={new URL("/phone-call.svg", import.meta.url).href} />
+            <WhiteIcon src="/phone-call.svg" />
             <a href="tel:+9179006248087">+91 7906248087</a>
           </FooterItem>
           <FooterItem>
-            <WhiteIcon src={new URL("/envelope.svg", import.meta.url).href} />
-            <a href="mailto:test@gmail.com">sale@nautresLap.com</a>
+            <WhiteIcon src="/envelope.svg" />
+            <a href="mailto:stay@natureslap.in">stay@natureslap.in</a>
           </FooterItem>
           <FooterItem>
-            <WhiteIcon src={new URL("/marker.svg", import.meta.url).href} />
+            <WhiteIcon src="/marker.svg" />
             <p>
               Lorem, ipsum dolor sit amet consectetur adipisicing elit.
               Similique harum aperiam mollitia fugit laboriosam error nihil

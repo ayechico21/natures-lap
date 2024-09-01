@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 function Header({ scrollToFooter }) {
   //const url = new URL("/mainBg.png", import.meta.url).href;
-  let url = "/mainBg.png";
+  let url = "/pic2.webp";
   const location = useLocation();
   console.log('location => ',JSON.stringify(location));
   if (location?.pathname?.includes("room")) url = "/room2.webp";
@@ -47,7 +47,7 @@ const ListWrapper = styled.div`
   left: 50%;
   transform: translateX(-50%);
   color: white;
-  background-color: hsla(0, 0%, 0%, 0.3);
+  background-color: hsla(0, 0%, 0%, 0.6);
 `;
 
 const List = styled.ul`
