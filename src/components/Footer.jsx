@@ -1,7 +1,8 @@
 import React, { forwardRef } from "react";
 import styled from "styled-components";
+import Logo from "./Logo";
 
-function Footer(props,footerRef) {
+function Footer(props, footerRef) {
   return (
     <Wrapper ref={footerRef}>
       <FooterContentWrapper>
@@ -26,7 +27,7 @@ function Footer(props,footerRef) {
           </FooterItem>
         </Reservations>
         <PlaceInfo>
-          <Heading>Logo</Heading>
+          <Logo />
           <p>
             Escape to tranquility in the heart of Ballari.we strive to create
             unforgettable experiences that connect you with nature and luxury.

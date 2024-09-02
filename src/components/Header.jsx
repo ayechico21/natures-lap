@@ -1,12 +1,13 @@
 import React from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import styled from "styled-components";
+import Logo from "./Logo";
 
 function Header({ scrollToFooter }) {
   //const url = new URL("/mainBg.png", import.meta.url).href;
   let url = "/pic2.webp";
   const location = useLocation();
-  console.log('location => ',JSON.stringify(location));
+  console.log("location => ", JSON.stringify(location));
   if (location?.pathname?.includes("room")) url = "/pic14.webp";
   else if (location?.pathname?.includes("dining")) url = "/pic8.webp";
   return (
@@ -16,7 +17,9 @@ function Header({ scrollToFooter }) {
         <List>
           <StyledNavLink to="/">Home</StyledNavLink>
           <StyledNavLink to="/rooms">Rooms</StyledNavLink>
-          <LogoListItem>LOGO</LogoListItem>
+          <LogoListItem>
+            <Logo />
+          </LogoListItem>
           <StyledNavLink to="/dining">Restaurant</StyledNavLink>
           <ListItem onClick={scrollToFooter}>Contact Us</ListItem>
         </List>
@@ -56,6 +59,7 @@ const List = styled.ul`
   overflow: hidden;
   list-style: none;
   display: flex;
+  align-items: center;
   gap: 48px;
   padding: 8px 24px;
   margin: 0 auto;

@@ -17,7 +17,7 @@ function Home() {
     <Wrapper>
       <MainCard>
         <InfoCard>
-          <h2>Who are we</h2>
+          <Heading>Who are we</Heading>
           <p>
             Hi, Welcome to an exquisite retreat nestled in the serene landscapes
             of Ballari, Karnataka. At Nature's Lap, we offer a harmonious blend
@@ -49,7 +49,7 @@ function Home() {
           <img src={url} />
         </ImageWrapper>
         <InfoCard>
-          <h2>Rooms</h2>
+          <Heading>Rooms</Heading>
           <p>
             Each room is a sanctuary where the charm of nature meets the comfort
             of modern luxury. Our living spaces are thoughtfully crafted,
@@ -74,7 +74,7 @@ function Home() {
       </MainCard>
       <MainCard>
         <InfoCard>
-          <h2>Dining</h2>
+          <Heading>Dining</Heading>
           <p>
             Dining at our resort is an experience that tantalizes the senses and
             nourishes the soul. Our culinary offerings are a celebration of
@@ -123,6 +123,39 @@ const InfoCard = styled.div`
   gap: 16px;
   padding: 16px 32px;
 `;
+
+const Heading = styled.h2`
+  position: relative;
+  padding: 0;
+  margin: 0;
+  font-family: "Raleway", sans-serif;
+  font-size: 2rem;
+  color: #080808;
+  -webkit-transition: all 0.4s ease 0s;
+  -o-transition: all 0.4s ease 0s;
+  transition: all 0.4s ease 0s;
+
+  &::before {
+    width: 28px;
+    height: 5px;
+    display: block;
+    content: "";
+    position: absolute;
+    bottom: -2.5px;
+    left: 5%;
+    background-color: hsl(0, 100%, 36%);
+  }
+  &::after {
+    width: 100px;
+    height: 1px;
+    display: block;
+    content: "";
+    position: relative;
+    left: 0;
+    background-color: hsl(0, 100%, 36%);
+  }
+`;
+
 const ImageWrapper = styled.div`
   flex: 1 1 50%;
   overflow: hidden;
@@ -135,15 +168,18 @@ const NavButton = styled.button`
   margin: 0 auto;
   padding: 8px 16px;
   border-radius: 12px;
-  color: hsl(137, 82%, 27%);
   border: 2px solid currentColor;
-  background-color: hsl(137, 82%, 95%);
+  /* color: hsl(137, 82%, 27%); */
+  
+ /*  background-color: hsl(137, 82%, 95%); */
   font-weight: 600;
+  color: hsl(0, 100%, 36%);
+  background-color: hsl(0, 100%, 95%);
   &:hover {
-    background-color: hsl(137, 82%, 37%);
+   /*  background-color: hsl(137, 82%, 37%); */
+    background-color: hsl(0, 100%, 36%);
     color: white;
     font-weight: 600;
-    
   }
 `;
 

@@ -29,6 +29,9 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 32px;
+  -webkit-transition: all 0.4s ease 0s;
+  -o-transition: all 0.4s ease 0s;
+  transition: all 0.4s ease 0s;
 `;
 
 export default App;
