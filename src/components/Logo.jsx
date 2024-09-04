@@ -15,6 +15,7 @@ const LogoWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 4px;
 `;
 
 const Heading = styled.p`
@@ -24,6 +25,7 @@ const Heading = styled.p`
   background-clip: text;
   -webkit-background-clip: text;
   background-image: linear-gradient(to bottom left, #b393d3, #2ad0ac);
+  line-height: 1;
 `;
 
 const Info = styled(Heading)`

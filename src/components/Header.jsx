@@ -51,6 +51,7 @@ const ListWrapper = styled.div`
   transform: translateX(-50%);
   color: white;
   background-color: hsla(0, 0%, 0%, 0.6);
+  padding: 8px 4px;
 `;
 
 const List = styled.ul`
@@ -63,6 +64,7 @@ const List = styled.ul`
   gap: 48px;
   padding: 8px 24px;
   margin: 0 auto;
+  font-family: "Raleway", sans-serif;
   /*position: absolute;
   top: 0;
   left: 50%;
@@ -91,6 +93,7 @@ const StyledNavLink = styled(NavLink)`
 `;
 
 const LogoListItem = styled(ListItem)`
+  font-family: "Playfair Display", serif;
   margin: 0 auto;
   cursor: initial;
 `;

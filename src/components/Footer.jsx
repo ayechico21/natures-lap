@@ -10,19 +10,23 @@ function Footer(props, footerRef) {
           <Heading>Reservations</Heading>
           <FooterItem>
             <WhiteIcon src="/phone-call.svg" />
-            <a href="tel:+9179006248087">+91 7906248087</a>
+            <div>
+              <p>
+                <a href="tel:+919449229249">+91 9449229249</a>
+              </p>
+              <a href="tel:+919482607000">+91 9482607000</a>
+            </div>
           </FooterItem>
           <FooterItem>
             <WhiteIcon src="/envelope.svg" />
-            <a href="mailto:stay@natureslap.in">stay@natureslap.in</a>
+            <a href="mailto:info@natureslap.in">info@natureslap.in</a>
           </FooterItem>
           <FooterItem>
             <WhiteIcon src="/marker.svg" />
             <p>
               Lorem, ipsum dolor sit amet consectetur adipisicing elit.
               Similique harum aperiam mollitia fugit laboriosam error nihil
-              natus at explicabo voluptas iure sunt, nisi aut voluptatibus ipsa
-              sapiente saepe consequuntur incidunt?
+              
             </p>
           </FooterItem>
         </Reservations>
@@ -38,11 +42,13 @@ function Footer(props, footerRef) {
           <Heading>Quick Links</Heading>
           <FooterItem>
             <Icon src={new URL("/social.png", import.meta.url).href} />
-            <a href="whatsapp Link">+91 7906248087</a>
+            <a href="whatsapp Link">+91 9449229249</a>
           </FooterItem>
           <FooterItem>
             <Icon src={new URL("/destination.png", import.meta.url).href} />
-            <a href="maps link">Get maps directions</a>
+            <a href="https://maps.app.goo.gl/UeyLrmfsZ3ZwXD9L8?g_st=com.google.maps.preview.copy">
+              Get Directions
+            </a>
           </FooterItem>
         </Links>
       </FooterContentWrapper>
@@ -53,6 +59,7 @@ function Footer(props, footerRef) {
 const Wrapper = styled.footer`
   background-color: hsl(0, 0%, 20%);
   color: hsl(0, 0%, 100%);
+  
 `;
 
 const FooterContentWrapper = styled.div`
@@ -62,7 +69,6 @@ const FooterContentWrapper = styled.div`
   display: flex;
   gap: 24px;
   color: hsl(0, 0%, 100%);
-
   & > * {
     display: flex;
     flex-direction: column;
@@ -71,17 +77,28 @@ const FooterContentWrapper = styled.div`
 
   & a {
     color: currentColor;
+    text-underline-offset: 4px;
+    text-decoration-color:  #b393d3;
   }
+  @media screen and (max-width: 900px){
+  flex-direction: column;
+ }
+
 `;
 
 const Reservations = styled.div`
-  flex: 1 1 0;
+  flex: 2 1 0;
 `;
 const PlaceInfo = styled.div`
-  flex: 1 1 0;
+  flex: 2 1 0;
+  text-align: center;
 `;
 const Links = styled.div`
   flex: 1 1 0;
+  @media screen and (max-width: 900px){
+  flex-direction: column;
+  align-items: flex-end;
+ }
 `;
 
 const Heading = styled.p`

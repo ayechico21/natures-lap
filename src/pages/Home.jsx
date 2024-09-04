@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import styled from "styled-components";
+import CurvyLines from "../components/CurvyLines";
 
 function Home() {
   const url = "/pic12.webp";
@@ -16,6 +17,9 @@ function Home() {
   return (
     <Wrapper>
       <MainCard>
+      <ImageWrapper>
+          <img src={url} />
+        </ImageWrapper>
         <InfoCard>
           <Heading>Who are we</Heading>
           <p>
@@ -40,14 +44,9 @@ function Home() {
             stay.
           </p>
         </InfoCard>
-        <ImageWrapper>
-          <img src={url} />
-        </ImageWrapper>
+        
       </MainCard>
-      <MainCard>
-        <ImageWrapper>
-          <img src={url} />
-        </ImageWrapper>
+      <ReversedMainCard>
         <InfoCard>
           <Heading>Rooms</Heading>
           <p>
@@ -71,8 +70,14 @@ function Home() {
           </p>
           <NavButton onClick={handleRoomsNavigation}>Rooms</NavButton>
         </InfoCard>
-      </MainCard>
+        <ImageWrapper>
+          <img src={url} />
+        </ImageWrapper>
+      </ReversedMainCard>
       <MainCard>
+      <ImageWrapper>
+          <img src={url} />
+        </ImageWrapper>
         <InfoCard>
           <Heading>Dining</Heading>
           <p>
@@ -97,9 +102,6 @@ function Home() {
           </p>
           <NavButton onClick={handleDiningNavigatio}>Dining</NavButton>
         </InfoCard>
-        <ImageWrapper>
-          <img src={url} />
-        </ImageWrapper>
       </MainCard>
     </Wrapper>
   );
@@ -114,8 +116,17 @@ const Wrapper = styled.section`
 const MainCard = styled.div`
   display: flex;
   align-items: center;
-`;
 
+ @media screen and (max-width: 900px){
+  flex-direction: column;
+ }
+
+`;
+const ReversedMainCard = styled(MainCard)`
+   @media screen and (max-width: 900px){
+  flex-direction: column-reverse;
+ }
+`
 const InfoCard = styled.div`
   flex: 1 1 50%;
   display: flex;
@@ -128,7 +139,8 @@ const Heading = styled.h2`
   position: relative;
   padding: 0;
   margin: 0;
-  font-family: "Raleway", sans-serif;
+  /* font-family: "Raleway", sans-serif; */
+  font-style: italic;
   font-size: 2rem;
   color: #080808;
   -webkit-transition: all 0.4s ease 0s;
@@ -170,13 +182,13 @@ const NavButton = styled.button`
   border-radius: 12px;
   border: 2px solid currentColor;
   /* color: hsl(137, 82%, 27%); */
-  
- /*  background-color: hsl(137, 82%, 95%); */
+
+  /*  background-color: hsl(137, 82%, 95%); */
   font-weight: 600;
   color: hsl(0, 100%, 36%);
   background-color: hsl(0, 100%, 95%);
   &:hover {
-   /*  background-color: hsl(137, 82%, 37%); */
+    /*  background-color: hsl(137, 82%, 37%); */
     background-color: hsl(0, 100%, 36%);
     color: white;
     font-weight: 600;
