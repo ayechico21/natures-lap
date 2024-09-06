@@ -2,6 +2,7 @@ import React from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import styled from "styled-components";
 import Logo from "./Logo";
+import HamburgurMenu from "./HamburgerMenu";
 
 function Header({ scrollToFooter }) {
   //const url = new URL("/mainBg.png", import.meta.url).href;
@@ -15,6 +16,7 @@ function Header({ scrollToFooter }) {
       <MainImage src={url} />
       <ListWrapper>
         <List>
+          <HamburgurMenu scrollToFooter={scrollToFooter} />
           <StyledNavLink to="/">Home</StyledNavLink>
           <StyledNavLink to="/rooms">Rooms</StyledNavLink>
           <LogoListItem>
@@ -51,7 +53,10 @@ const ListWrapper = styled.div`
   transform: translateX(-50%);
   color: white;
   background-color: hsla(0, 0%, 0%, 0.6);
-  padding: 8px 4px;
+  padding: 8px 24px;
+  @media screen and (max-width: 900px) {
+    padding: 8px 4px;
+  }
 `;
 
 const List = styled.ul`
@@ -62,16 +67,12 @@ const List = styled.ul`
   display: flex;
   align-items: center;
   gap: 48px;
-  padding: 8px 24px;
   margin: 0 auto;
   font-family: "Raleway", sans-serif;
-  /*position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  color: white;
-  /*  backdrop-filter: blur(1px); */
-  /*background-color: hsla(0, 0%, 0%, 0.3);*/
+  @media screen and (max-width: 900px) {
+    padding: 0;
+    gap: 0;
+  }
 `;
 
 const ListItem = styled.li`
@@ -80,6 +81,9 @@ const ListItem = styled.li`
   color: white;
   text-decoration: none;
   cursor: pointer;
+  @media screen and (max-width: 900px) {
+    display: none;
+  }
 `;
 
 const StyledNavLink = styled(NavLink)`
@@ -90,12 +94,20 @@ const StyledNavLink = styled(NavLink)`
   &.active {
     color: #2ad0ac;
   }
+  @media screen and (max-width: 900px) {
+    display: none;
+  }
 `;
 
-const LogoListItem = styled(ListItem)`
-  font-family: "Playfair Display", serif;
-  margin: 0 auto;
+const LogoListItem = styled.li`
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: white;
+  text-decoration: none;
   cursor: initial;
+  margin: 0 auto;
+  font-family: "Playfair Display", serif;
+ 
 `;
 
 export default Header;
