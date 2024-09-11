@@ -11,6 +11,7 @@ function Header({ scrollToFooter }) {
   console.log("location => ", JSON.stringify(location));
   if (location?.pathname?.includes("room")) url = "/pic14.webp";
   else if (location?.pathname?.includes("dining")) url = "/pic8.webp";
+  else if (location?.pathname?.includes("gallery")) url = "/pic12.webp";
   return (
     <Wrapper>
       <MainImage src={url} />
@@ -18,11 +19,12 @@ function Header({ scrollToFooter }) {
         <List>
           <HamburgurMenu scrollToFooter={scrollToFooter} />
           <StyledNavLink to="/">Home</StyledNavLink>
-          <StyledNavLink to="/rooms">Rooms</StyledNavLink>
+          {/* <StyledNavLink to="/rooms">Rooms</StyledNavLink> */}
           <LogoListItem>
             <Logo />
           </LogoListItem>
-          <StyledNavLink to="/dining">Restaurant</StyledNavLink>
+          {/* <StyledNavLink to="/dining">Restaurant</StyledNavLink> */}
+          <StyledNavLink to="/gallery">Gallery</StyledNavLink>
           <ListItem onClick={scrollToFooter}>Contact Us</ListItem>
         </List>
       </ListWrapper>

@@ -8,7 +8,7 @@ function Home() {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const handleDiningNavigatio = () => {
+  const handleDiningNavigation = () => {
     navigate("/dining", { state: location, replace: true });
   };
   const handleRoomsNavigation = () => {
@@ -68,7 +68,8 @@ function Home() {
             private balconies, our rooms invite you to relax, recharge, and
             immerse yourself in the serene ambiance of our beloved resort.
           </p>
-          <NavButton onClick={handleRoomsNavigation}>Rooms</NavButton>
+          {/* <NavButton onClick={handleRoomsNavigation}>Rooms</NavButton> */}
+          <NavButton>Coming Soon</NavButton>
         </InfoCard>
         <ImageWrapper>
           <img src={url} />
@@ -100,7 +101,8 @@ function Home() {
             integral part of the overall experience, where every bite is a step
             closer to the heart of nature.
           </p>
-          <NavButton onClick={handleDiningNavigatio}>Dining</NavButton>
+          {/* <NavButton onClick={handleDiningNavigation}>Dining</NavButton> */}
+          <NavButton>Coming Soon</NavButton>
         </InfoCard>
       </MainCard>
     </Wrapper>
