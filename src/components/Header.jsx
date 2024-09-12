@@ -6,7 +6,7 @@ import HamburgurMenu from "./HamburgerMenu";
 
 function Header({ scrollToFooter }) {
   //const url = new URL("/mainBg.png", import.meta.url).href;
-  let url = "/pic2.webp";
+  let url = "/pic10.webp";
   const location = useLocation();
   console.log("location => ", JSON.stringify(location));
   if (location?.pathname?.includes("room")) url = "/pic14.webp";

@@ -5,7 +5,7 @@ function Logo() {
   return (
     <LogoWrapper>
       <Heading>Nature's Lap</Heading>
-      <Info>Heritage Home & Resort</Info>
+      <Info>Heritage HomeStay & Resort</Info>
     </LogoWrapper>
   );
 }

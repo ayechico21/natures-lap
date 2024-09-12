@@ -24,9 +24,8 @@ function Footer(props, footerRef) {
           <FooterItem>
             <WhiteIcon src="/marker.svg" />
             <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-              Similique harum aperiam mollitia fugit laboriosam error nihil
-              
+              Behind JSW Model High School Vaddu, Near Hill Side Township,
+              Vaddu, Bellary, Karnataka 583123
             </p>
           </FooterItem>
         </Reservations>
@@ -59,7 +58,6 @@ function Footer(props, footerRef) {
 const Wrapper = styled.footer`
   background-color: hsl(0, 0%, 20%);
   color: hsl(0, 0%, 100%);
-  
 `;
 
 const FooterContentWrapper = styled.div`
@@ -78,16 +76,15 @@ const FooterContentWrapper = styled.div`
   & a {
     color: currentColor;
     text-underline-offset: 4px;
-    text-decoration-color:  #b393d3;
+    text-decoration-color: #b393d3;
   }
-  @media screen and (max-width: 900px){
-  flex-direction: column;
- }
-
+  @media screen and (max-width: 900px) {
+    flex-direction: column;
+  }
 `;
 
 const Reservations = styled.div`
-  flex: 2 1 0;
+  flex: 1 1 0;
 `;
 const PlaceInfo = styled.div`
   flex: 2 1 0;
@@ -95,10 +92,10 @@ const PlaceInfo = styled.div`
 `;
 const Links = styled.div`
   flex: 1 1 0;
-  @media screen and (max-width: 900px){
-  flex-direction: column;
-  align-items: flex-end;
- }
+  @media screen and (max-width: 900px) {
+    flex-direction: column;
+    align-items: flex-end;
+  }
 `;
 
 const Heading = styled.p`
