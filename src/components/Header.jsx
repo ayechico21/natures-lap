@@ -9,7 +9,7 @@ function Header({ scrollToFooter }) {
   let url = "/img19.webp";
   const location = useLocation();
   console.log("location => ", JSON.stringify(location));
-  if (location?.pathname?.includes("room")) url = "/img6.webp";
+  if (location?.pathname?.includes("room")) url = "/img22.webp";
   else if (location?.pathname?.includes("dining")) url = "/img16.webp";
   else if (location?.pathname?.includes("gallery")) url = "/img15.webp";
   else if (location?.pathname?.includes("privacy")) url = "/img3.webp";
@@ -20,7 +20,7 @@ function Header({ scrollToFooter }) {
         <List>
           <HamburgurMenu scrollToFooter={scrollToFooter} />
           <StyledNavLink to="/">Home</StyledNavLink>
-          {/* <StyledNavLink to="/rooms">Rooms</StyledNavLink> */}
+          <StyledNavLink to="/rooms">Rooms</StyledNavLink>
           <LogoListItem>
             <Logo />
           </LogoListItem>
