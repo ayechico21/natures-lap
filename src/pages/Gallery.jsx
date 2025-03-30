@@ -3,9 +3,9 @@ import styled from "styled-components";
 function Gallery() {
   return (
     <Wrapper>
-      {range(1, 15).map((index) => {
+      {range(1, 23).map((index) => {
         console.log(index);
-        const url = `/pic${index}.webp`;
+        const url = `/img${index}.webp`;
         return (
           <ImageWrapper key={index}>
             <Image src={url} />
@@ -18,6 +18,7 @@ function Gallery() {
 
 const Wrapper = styled.div`
   display: flex;
+  flex-direction: row;
   justify-content: center;
   gap: 16px;
   flex-wrap: wrap;

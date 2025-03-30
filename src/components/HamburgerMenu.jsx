@@ -51,6 +51,7 @@ function HamburgurMenu({ scrollToFooter }) {
         <StyledNavLink to="/dining">Restaurant</StyledNavLink> */}
         <StyledNavLink to="/gallery">Gallery</StyledNavLink>
         <ListItem onClick={scrollToFooter}>Contact Us</ListItem>
+        <StyledNavLink to="/privacy">Privacy</StyledNavLink>
       </StyledMenu>
     </Wrapper>
   );

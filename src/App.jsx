@@ -8,6 +8,7 @@ import Home from "./pages/Home";
 import Rooms from "./pages/Rooms";
 import Dining from "./pages/Dining";
 import Gallery from "./pages/Gallery";
+import Privacy from "./pages/Privacy";
 function App() {
   const footerRef = React.useRef(null);
   const scrollToFooter = () => {
@@ -21,6 +22,7 @@ function App() {
         <Route path="/rooms" element={<Rooms />} />
         <Route path="/dining" element={<Dining />} />
         <Route path="/gallery" element={<Gallery />} />
+        <Route path="/privacy" element={<Privacy />} />
       </Routes>
       <Footer ref={footerRef} />
     </Wrapper>

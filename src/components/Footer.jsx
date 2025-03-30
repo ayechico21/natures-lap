@@ -1,6 +1,8 @@
 import React, { forwardRef } from "react";
 import styled from "styled-components";
 import Logo from "./Logo";
+import { BriefcaseBusiness } from "lucide-react";
+import { NavLink } from "react-router-dom";
 
 function Footer(props, footerRef) {
   return (
@@ -14,7 +16,12 @@ function Footer(props, footerRef) {
               <p>
                 <a href="tel:+919449229249">+91 9449229249</a>
               </p>
-              <a href="tel:+919482607000">+91 9482607000</a>
+              <p>
+                <a href="tel:+919482607000">+91 9482607000</a>
+              </p>
+              <p>
+                <a href="tel:+919008526724">+91 9008526724</a>
+              </p>
             </div>
           </FooterItem>
           <FooterItem>
@@ -24,8 +31,7 @@ function Footer(props, footerRef) {
           <FooterItem>
             <WhiteIcon src="/marker.svg" />
             <p>
-              Behind JSW Model High School Vaddu, Near Hill Side Township,
-              Vaddu, Bellary, Karnataka 583123
+              A/C 154, 155 Survey No 293, 295, Vaddu Road, Opp Jindal Township, Vaddu, Ballari, Karnataka, 583123
             </p>
           </FooterItem>
         </Reservations>
@@ -41,13 +47,17 @@ function Footer(props, footerRef) {
           <Heading>Quick Links</Heading>
           <FooterItem>
             <Icon src={new URL("/social.png", import.meta.url).href} />
-            <a href="whatsapp Link">+91 9449229249</a>
+            <a href="https://api.whatsapp.com/send?phone=919449229249&text=Hello%2C%20I%20want%20more%20info%20about%20Nature%27s%20Lap">+91 9449229249</a>
           </FooterItem>
           <FooterItem>
             <Icon src={new URL("/destination.png", import.meta.url).href} />
-            <a href="https://maps.app.goo.gl/UeyLrmfsZ3ZwXD9L8?g_st=com.google.maps.preview.copy">
+            <a href="https://maps.app.goo.gl/zFKDAYTbH2xPxAo37">
               Get Directions
             </a>
+          </FooterItem>
+          <FooterItem>
+            <BriefcaseBusiness />
+            <NavLink to={"/privacy"}>Privacy Policy</NavLink>
           </FooterItem>
         </Links>
       </FooterContentWrapper>

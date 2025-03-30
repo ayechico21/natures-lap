@@ -4,7 +4,6 @@ import styled from "styled-components";
 import CurvyLines from "../components/CurvyLines";
 
 function Home() {
-  const url = "/pic12.webp";
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -18,7 +17,7 @@ function Home() {
     <Wrapper>
       <MainCard>
       <ImageWrapper>
-          <img src={url} />
+          <img src="./img15.webp" />
         </ImageWrapper>
         <InfoCard>
           <Heading>Who are we</Heading>
@@ -68,16 +67,16 @@ function Home() {
             private balconies, our rooms invite you to relax, recharge, and
             immerse yourself in the serene ambiance of our beloved resort.
           </p>
-          {/* <NavButton onClick={handleRoomsNavigation}>Rooms</NavButton> */}
-          <NavButton>Coming Soon</NavButton>
+          <NavButton onClick={handleRoomsNavigation}>Have A Look</NavButton>
+{/*           <NavButton>Coming Soon</NavButton> */}
         </InfoCard>
         <ImageWrapper>
-          <img src={url} />
+          <img src="./img22.webp" />
         </ImageWrapper>
       </ReversedMainCard>
       <MainCard>
       <ImageWrapper>
-          <img src={url} />
+          <img src="./img16.webp" />
         </ImageWrapper>
         <InfoCard>
           <Heading>Dining</Heading>

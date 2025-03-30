@@ -6,12 +6,13 @@ import HamburgurMenu from "./HamburgerMenu";
 
 function Header({ scrollToFooter }) {
   //const url = new URL("/mainBg.png", import.meta.url).href;
-  let url = "/pic10.webp";
+  let url = "/img19.webp";
   const location = useLocation();
   console.log("location => ", JSON.stringify(location));
-  if (location?.pathname?.includes("room")) url = "/pic14.webp";
-  else if (location?.pathname?.includes("dining")) url = "/pic8.webp";
-  else if (location?.pathname?.includes("gallery")) url = "/pic12.webp";
+  if (location?.pathname?.includes("room")) url = "/img6.webp";
+  else if (location?.pathname?.includes("dining")) url = "/img16.webp";
+  else if (location?.pathname?.includes("gallery")) url = "/img15.webp";
+  else if (location?.pathname?.includes("privacy")) url = "/img3.webp";
   return (
     <Wrapper>
       <MainImage src={url} />
@@ -26,6 +27,7 @@ function Header({ scrollToFooter }) {
           {/* <StyledNavLink to="/dining">Restaurant</StyledNavLink> */}
           <StyledNavLink to="/gallery">Gallery</StyledNavLink>
           <ListItem onClick={scrollToFooter}>Contact Us</ListItem>
+          <StyledNavLink to="/privacy">Privacy</StyledNavLink>
         </List>
       </ListWrapper>
     </Wrapper>
