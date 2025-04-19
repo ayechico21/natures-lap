@@ -30,10 +30,12 @@ function HamburgurMenu({ scrollToFooter }) {
       <StyledMenu open={isMenuOpen}>
         <StyledNavLink to="/">Home</StyledNavLink>
         <StyledNavLink to="/rooms">Rooms</StyledNavLink>
-        {/* <StyledNavLink to="/dining">Restaurant</StyledNavLink> */}
         <StyledNavLink to="/gallery">Gallery</StyledNavLink>
-        <ListItem onClick={scrollToFooter}>Contact Us</ListItem>
-        <StyledNavLink to="/privacy">Privacy</StyledNavLink>
+        {/* <StyledNavLink to="/dining">Restaurant</StyledNavLink> */}
+        <StyledNavLink to="/about">About Us</StyledNavLink>
+        <StyledNavLink to="/contact">Contact Us</StyledNavLink>
+        <ListItem onClick={scrollToFooter}>Policies</ListItem>
+        {/* <StyledNavLink to="/privacy">Privacy</StyledNavLink> */}
       </StyledMenu>
     </Wrapper>
   );

@@ -17,7 +17,7 @@ function Home() {
     <Wrapper>
       <MainCard>
       <ImageWrapper>
-          <img src="./img15.webp" />
+          <img src="./img26.webp" />
         </ImageWrapper>
         <InfoCard>
           <Heading>Who are we</Heading>
@@ -71,12 +71,12 @@ function Home() {
 {/*           <NavButton>Coming Soon</NavButton> */}
         </InfoCard>
         <ImageWrapper>
-          <img src="./img22.webp" />
+          <img src="./img12.webp" />
         </ImageWrapper>
       </ReversedMainCard>
       <MainCard>
       <ImageWrapper>
-          <img src="./img16.webp" />
+          <img src="./img31.webp" />
         </ImageWrapper>
         <InfoCard>
           <Heading>Dining</Heading>

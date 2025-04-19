@@ -221,15 +221,19 @@ const Description = styled.p`
 const Rooms = () => {
   const navigate = useNavigate();
   const images = [
-    "./img6.webp",
     "./img7.webp",
     "./img8.webp",
     "./img9.webp",
     "./img10.webp",
+    "./img11.webp",
+    "./img12.webp",
+    "./img13.webp",
+    "./img14.webp",
     "./img1.webp",
-    "./img2.webp",
+    "./img3.webp",
+    "./img4.webp",
     "./img5.webp",
-    "./img22.webp",
+    "./img6.webp",
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);

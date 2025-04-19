@@ -1,7 +1,12 @@
 import React, { forwardRef } from "react";
 import styled from "styled-components";
 import Logo from "./Logo";
-import { BriefcaseBusiness } from "lucide-react";
+import {
+  BriefcaseBusiness,
+  ShieldCheck,
+  HandCoins,
+  ScrollText,
+} from "lucide-react";
 import { NavLink } from "react-router-dom";
 
 function Footer(props, footerRef) {
@@ -14,7 +19,7 @@ function Footer(props, footerRef) {
             <WhiteIcon src="/phone-call.svg" />
             <div>
               <p>
-                <a href="tel:+919449229249">+91 9449229249</a>
+                <a href="tel:+9109008526724">+91 9008526724</a>
               </p>
               <p>
                 <a href="tel:+919482607000">+91 9482607000</a>
@@ -31,7 +36,8 @@ function Footer(props, footerRef) {
           <FooterItem>
             <WhiteIcon src="/marker.svg" />
             <p>
-              A/C 154, 155 Survey No 293, 295, Vaddu Road, Opp Jindal Township, Vaddu, Ballari, Karnataka, 583123
+              A/C 154, 155 Survey No 293, 295, Vaddu Road, Opp Jindal Township,
+              Vaddu, Ballari, Karnataka, 583123
             </p>
           </FooterItem>
         </Reservations>
@@ -47,7 +53,9 @@ function Footer(props, footerRef) {
           <Heading>Quick Links</Heading>
           <FooterItem>
             <Icon src={new URL("/social.png", import.meta.url).href} />
-            <a href="https://api.whatsapp.com/send?phone=919449229249&text=Hello%2C%20I%20want%20more%20info%20about%20Nature%27s%20Lap">+91 9449229249</a>
+            <a href="https://api.whatsapp.com/send?phone=919008526724&text=Hello%2C%20I%20want%20more%20info%20about%20Nature%27s%20Lap">
+              +919008526724
+            </a>
           </FooterItem>
           <FooterItem>
             <Icon src={new URL("/destination.png", import.meta.url).href} />
@@ -58,6 +66,20 @@ function Footer(props, footerRef) {
           <FooterItem>
             <BriefcaseBusiness />
             <NavLink to={"/privacy"}>Privacy Policy</NavLink>
+          </FooterItem>
+          <FooterItem>
+            <ScrollText />
+            <NavLink to="/terms">Terms & Conditions</NavLink>
+          </FooterItem>
+
+          <FooterItem>
+            <HandCoins />
+            <NavLink to="/refund">Refund Policy</NavLink>
+          </FooterItem>
+
+          <FooterItem>
+            <ShieldCheck />
+            <NavLink to="/risks">Risks & Disclaimer</NavLink>
           </FooterItem>
         </Links>
       </FooterContentWrapper>

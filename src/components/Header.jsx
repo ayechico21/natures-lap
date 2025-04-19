@@ -6,13 +6,18 @@ import HamburgurMenu from "./HamburgerMenu";
 
 function Header({ scrollToFooter }) {
   //const url = new URL("/mainBg.png", import.meta.url).href;
-  let url = "/img19.webp";
+  let url = "/img26.webp";
   const location = useLocation();
   console.log("location => ", JSON.stringify(location));
-  if (location?.pathname?.includes("room")) url = "/img22.webp";
-  else if (location?.pathname?.includes("dining")) url = "/img16.webp";
-  else if (location?.pathname?.includes("gallery")) url = "/img15.webp";
-  else if (location?.pathname?.includes("privacy")) url = "/img3.webp";
+  if (location?.pathname?.includes("room")) url = "/img12.webp";
+  else if (location?.pathname?.includes("dining")) url = "/img27.webp";
+  else if (location?.pathname?.includes("gallery")) url = "/img37.webp";
+  else if (location?.pathname?.includes("about")) url = "/img16.webp";
+  else if (location?.pathname?.includes("contact")) url = "/img22.webp";
+  else if (location?.pathname?.includes("privacy")) url = "/img20.webp";
+  else if (location?.pathname?.includes("refund")) url = "/img27.webp";
+  else if (location?.pathname?.includes("risks")) url = "/img31.webp";
+  else if (location?.pathname?.includes("terms")) url = "/img16.webp";
   return (
     <Wrapper>
       <MainImage src={url} />
@@ -21,13 +26,15 @@ function Header({ scrollToFooter }) {
           <HamburgurMenu scrollToFooter={scrollToFooter} />
           <StyledNavLink to="/">Home</StyledNavLink>
           <StyledNavLink to="/rooms">Rooms</StyledNavLink>
+          <StyledNavLink to="/gallery">Gallery</StyledNavLink>
           <LogoListItem>
             <Logo />
           </LogoListItem>
           {/* <StyledNavLink to="/dining">Restaurant</StyledNavLink> */}
-          <StyledNavLink to="/gallery">Gallery</StyledNavLink>
-          <ListItem onClick={scrollToFooter}>Contact Us</ListItem>
-          <StyledNavLink to="/privacy">Privacy</StyledNavLink>
+          <StyledNavLink to="/about">About Us</StyledNavLink>
+          <StyledNavLink to="/contact">Contact Us</StyledNavLink>
+          <ListItem onClick={scrollToFooter}>Policies</ListItem>
+          {/* <StyledNavLink to="/privacy">Policies</StyledNavLink> */}
         </List>
       </ListWrapper>
     </Wrapper>

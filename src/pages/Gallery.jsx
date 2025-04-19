@@ -3,9 +3,9 @@ import styled from "styled-components";
 function Gallery() {
   return (
     <Wrapper>
-      {range(1, 23).map((index) => {
+      {range(0, 38).map((index) => {
         console.log(index);
-        const url = `/img${index}.webp`;
+        const url = `/img${38-index}.webp`;
         return (
           <ImageWrapper key={index}>
             <Image src={url} />
