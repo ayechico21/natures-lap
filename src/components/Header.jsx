@@ -30,7 +30,7 @@ function Header({ scrollToFooter }) {
           <LogoListItem>
             <Logo />
           </LogoListItem>
-          {/* <StyledNavLink to="/dining">Restaurant</StyledNavLink> */}
+          <StyledNavLink to="/dining">Restaurant</StyledNavLink>
           <StyledNavLink to="/about">About Us</StyledNavLink>
           <StyledNavLink to="/contact">Contact Us</StyledNavLink>
           <ListItem onClick={scrollToFooter}>Policies</ListItem>

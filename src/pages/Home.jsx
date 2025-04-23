@@ -100,8 +100,8 @@ function Home() {
             integral part of the overall experience, where every bite is a step
             closer to the heart of nature.
           </p>
-          {/* <NavButton onClick={handleDiningNavigation}>Dining</NavButton> */}
-          <NavButton>Coming Soon</NavButton>
+          <NavButton onClick={handleDiningNavigation}>Dining</NavButton>
+         {/*  <NavButton>Coming Soon</NavButton> */}
         </InfoCard>
       </MainCard>
     </Wrapper>
