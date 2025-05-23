@@ -1,7 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import Footer from "./components/Footer";
-import Header from "./components/Header";
 import "./app.css";
 import { Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
@@ -13,32 +11,31 @@ import BookingPage from "./pages/BookingPage";
 import RefundPolicy from "./pages/Refund";
 import Risks from "./pages/Risks";
 import Terms from "./pages/Terms";
-import ScrollToTop from "./components/ScrollToTop";
 import AboutUs from "./pages/AboutUs";
 import ContactUs from "./pages/ContactUs";
+import StatusPage from "./pages/PaymentStatus";
+import MainLayout from "./layout/MainLayout";
+
 function App() {
-  const footerRef = React.useRef(null);
-  const scrollToFooter = () => {
-    footerRef.current?.scrollIntoView({ behavior: "smooth" });
-  };
   return (
     <Wrapper>
-      <Header scrollToFooter={scrollToFooter} />
-      <ScrollToTop />
+
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/rooms" element={<Rooms />} />
-        <Route path="/dining" element={<Dining />} />
-        <Route path="/gallery" element={<Gallery />} />
-        <Route path="/booking" element={<BookingPage />} />
-        <Route path="/privacy" element={<Privacy />} />
-        <Route path="/refund" element={<RefundPolicy />} />
-        <Route path="/risks" element={<Risks />} />
-        <Route path="/terms" element={<Terms />} />
-        <Route path="/about" element={<AboutUs />} />
-        <Route path="/contact" element={<ContactUs />} />
+        <Route element={<MainLayout/>}>
+          <Route path="/" element={<Home />} />
+          <Route path="/rooms" element={<Rooms />} />
+          <Route path="/dining" element={<Dining />} />
+          <Route path="/gallery" element={<Gallery />} />
+          <Route path="/booking" element={<BookingPage />} />
+          <Route path="/privacy" element={<Privacy />} />
+          <Route path="/refund" element={<RefundPolicy />} />
+          <Route path="/risks" element={<Risks />} />
+          <Route path="/terms" element={<Terms />} />
+          <Route path="/about" element={<AboutUs />} />
+          <Route path="/contact" element={<ContactUs />} />
+        </Route>
+        <Route path="/status" element={<StatusPage />} />
       </Routes>
-      <Footer ref={footerRef} />
     </Wrapper>
   );
 }
@@ -55,6 +52,8 @@ const Wrapper = styled.div`
     rgba(238, 174, 202, 1) 0%,
     rgba(148, 187, 233, 1) 100%
   );
+  min-height: 100dvh;
 `;
+
 
 export default App;
