@@ -4,7 +4,6 @@ function Gallery() {
   return (
     <Wrapper>
       {range(0, 38).map((index) => {
-        console.log(index);
         const url = `/img${38-index}.webp`;
         return (
           <ImageWrapper key={index}>

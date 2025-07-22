@@ -8,7 +8,6 @@ function Header({ scrollToFooter }) {
   //const url = new URL("/mainBg.png", import.meta.url).href;
   let url = "/img26.webp";
   const location = useLocation();
-  console.log("location => ", JSON.stringify(location));
   if (location?.pathname?.includes("room")) url = "/img12.webp";
   else if (location?.pathname?.includes("dining")) url = "/img27.webp";
   else if (location?.pathname?.includes("gallery")) url = "/img37.webp";

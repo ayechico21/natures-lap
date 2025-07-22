@@ -209,15 +209,20 @@ const BookingPage = () => {
       const days =
         (new Date(checkOut).getTime() - new Date(checkIn).getTime()) /
         (1000 * 60 * 60 * 24);
+        
       if (days >= 1) {
-        setAmount(rooms * 3200 * days);
+        const extraAdults = Math.max(adults - rooms, 0);
+
+        const nextCost = ((3200*rooms) + (400*(extraAdults)))*days
+        /* setAmount(rooms * 3200 * days); */
+        setAmount(nextCost)
       } else {
         setAmount(0); // Invalid date range
       }
     } else {
       setAmount(0);
     }
-  }, [checkIn, checkOut, rooms]);
+  }, [checkIn, checkOut, rooms, adults]);
 
   useEffect(() => {
     const requiredRoomsForAdults = Math.ceil(adults / 2);
@@ -226,7 +231,9 @@ const BookingPage = () => {
       requiredRoomsForAdults,
       requiredRoomsForChildren
     );
-    setRooms(minRoomsNeeded || 1);
+    const nextRooms = Math.min(minRoomsNeeded, adults);
+    
+    setRooms(nextRooms);
   }, [adults, children]);
 
   useEffect(() => {
@@ -283,8 +290,8 @@ const BookingPage = () => {
       return;
     }
 
-    const totalAmount = amount + (amount * 12) / 100;
-
+    const totalAmount = amount + (amount * 12) / 100; 
+    
     try {
       const checkinDate = new Date(checkIn).toISOString().split("T")[0];
       const checkoutDate = new Date(checkOut).toISOString().split("T")[0];
@@ -315,7 +322,6 @@ const BookingPage = () => {
         UDF09: "",
         UDF10: "",
       };
-      console.log("payload", payload);
 
       const res = await fetch(
         "https://natureslap-60024597013.development.catalystserverless.in/server/natureslap_function/initiate_payment",
@@ -326,7 +332,7 @@ const BookingPage = () => {
           body: JSON.stringify(payload),
         }
       );
-       /* const res = await fetch(
+      /*  const res = await fetch(
         " http://localhost:3000/server/natureslap_function/initiate_payment",
         {
           method: "POST",
@@ -337,17 +343,14 @@ const BookingPage = () => {
       );  */
 
       const result = await res.json();
-      console.log("result: ", result);
-      // Safely snapshot the JSON result:
-      const resultSnapshot = JSON.parse(JSON.stringify(result));
-      console.log("Result snapshot:", resultSnapshot);
-
+      
       if (result.success && result.gatewayURL) {
+        const postUrl = result.gatewayURL.replace('payuatrbac', 'paypg');
+
         const form = document.createElement("form");
         form.method = "POST";
-        form.action = result.gatewayURL;
-        form.target = "_blank";
-
+        form.action = postUrl;
+        
         const merchantId = document.createElement("input");
         merchantId.type = "hidden";
         merchantId.name = "MerchantId";
@@ -496,7 +499,7 @@ const BookingPage = () => {
             value={children}
             onChange={(e) => setChildren(Number(e.target.value))}
           >
-            {[...Array(5).keys()].slice(1).map((n) => (
+            {[...Array(5).keys()].map((n) => (
               <option key={n} value={n}>
                 {n}
               </option>

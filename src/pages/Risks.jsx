@@ -118,7 +118,7 @@ const Risks = () => {
         <Text>If you have any concerns or need clarification regarding this notice, please contact us:</Text>
         <List>
           <ListItem>📧 <strong>Email:{' '}</strong><a href="mailto:info@natureslap.com">info@natureslap.com</a></ListItem>
-          <ListItem>📞 <strong>Phone:{' '}</strong>+919008526724 , +919449229249, +919482607000</ListItem>
+          <ListItem>📞 <strong>Phone:{' '}</strong>+919008526724 ,  +919482607000</ListItem>
         </List>
       </Section>
     </Container>

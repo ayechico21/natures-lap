@@ -16,7 +16,7 @@ const ContactUs = () => {
           </ContactItem>
           <ContactItem>
             <Label>📞 Phone:</Label>
-            +91 9008526724, +91 9449229249, +91 9482607000
+            +91 9008526724, +91 9482607000
           </ContactItem>
           <ContactItem>
             <Label>📧 Email:</Label>

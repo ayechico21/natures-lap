@@ -114,7 +114,7 @@ const Privacy = () => {
         <Text>If you have any questions, concerns, or requests regarding your privacy or this policy, please contact us at:</Text>
         <List>
           <ListItem>📧 <strong>Email:{' '}</strong> <a href="mailto:info@natureslap.com">info@natureslap.com</a></ListItem>
-          <ListItem>📞 <strong>Phone:{' '}</strong>+919008526724 , +919449229249, +919482607000</ListItem>
+          <ListItem>📞 <strong>Phone:{' '}</strong>+919008526724 ,  +919482607000</ListItem>
           <ListItem>🏢 <strong>Address:{' '}</strong>A/C 154, 155 Survey No 293, 295, Vaddu Road, Opp Jindal Township, Vaddu, Ballari, Karnataka, 583123</ListItem>
         </List>
       </Section>

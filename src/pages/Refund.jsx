@@ -102,7 +102,7 @@ const RefundPolicy = () => {
         <Text>If you need to request a refund or have questions about our refund process, contact us via:</Text>
         <List>
           <ListItem>📧 <strong>Email:{' '}</strong><a href="mailto:info@natureslap.com">info@natureslap.com</a></ListItem>
-          <ListItem>📞 <strong>Phone:{' '}</strong>+919008526724 , +919449229249, +919482607000</ListItem>
+          <ListItem>📞 <strong>Phone:{' '}</strong>+919008526724 ,  +919482607000</ListItem>
         </List>
       </Section>
     </Container>
