@@ -203,19 +203,20 @@ const BookingPage = () => {
   const [isPhoneValid, setIsPhoneValid] = useState(true);
   const [popup, setPopup] = useState(null);
   const [specialRequest, setSpecialRequest] = useState("");
+  const [maxAvailableRooms, setMaxAvailableRooms] = useState(4);
 
   useEffect(() => {
     if (checkIn && checkOut) {
       const days =
         (new Date(checkOut).getTime() - new Date(checkIn).getTime()) /
         (1000 * 60 * 60 * 24);
-        
+
       if (days >= 1) {
         const extraAdults = Math.max(adults - rooms, 0);
 
-        const nextCost = ((3200*rooms) + (400*(extraAdults)))*days
+        const nextCost = (3200 * rooms + 400 * extraAdults) * days;
         /* setAmount(rooms * 3200 * days); */
-        setAmount(nextCost)
+        setAmount(nextCost);
       } else {
         setAmount(0); // Invalid date range
       }
@@ -232,7 +233,7 @@ const BookingPage = () => {
       requiredRoomsForChildren
     );
     const nextRooms = Math.min(minRoomsNeeded, adults);
-    
+
     setRooms(nextRooms);
   }, [adults, children]);
 
@@ -245,6 +246,32 @@ const BookingPage = () => {
       setCheckOut("");
     }
   }, [checkIn]);
+
+  useEffect(() => {
+    async function fetchMaxAvailableRoom() {
+      try {
+        const res = await fetch(
+          "https://natureslap-60024597013.development.catalystserverless.in/server/natureslap_function/get_settings",
+          {
+            method: "GET",
+            headers: { "Content-Type": "application/json" },
+            credentials: "include",
+          }
+        );
+
+        const result = await res.json();
+        if (result.success) {
+          const rooms = parseInt(result.settings.totalRooms);
+          return rooms;
+        }
+      } catch (e) {
+        console.error("Error in finding available rooms");
+        return 4;
+      }
+    }
+    const fetchedMaxAvailableRooms = fetchMaxAvailableRoom();
+    setMaxAvailableRooms(fetchedMaxAvailableRooms);
+  }, []);
 
   const validateEmail = (email) => /\S+@\S+\.\S+/.test(email);
   const validatePhone = (phone) => /^[6-9]\d{9}$/.test(phone);
@@ -290,8 +317,8 @@ const BookingPage = () => {
       return;
     }
 
-    const totalAmount = amount + (amount * 12) / 100; 
-    
+    const totalAmount = amount + (amount * 12) / 100;
+
     try {
       const checkinDate = new Date(checkIn).toISOString().split("T")[0];
       const checkoutDate = new Date(checkOut).toISOString().split("T")[0];
@@ -332,25 +359,16 @@ const BookingPage = () => {
           body: JSON.stringify(payload),
         }
       );
-      /*  const res = await fetch(
-        " http://localhost:3000/server/natureslap_function/initiate_payment",
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-         
-          body: JSON.stringify(payload),
-        }
-      );  */
 
       const result = await res.json();
-      
+
       if (result.success && result.gatewayURL) {
-        const postUrl = result.gatewayURL.replace('payuatrbac', 'paypg');
+        const postUrl = result.gatewayURL.replace("payuatrbac", "paypg");
 
         const form = document.createElement("form");
         form.method = "POST";
         form.action = postUrl;
-        
+
         const merchantId = document.createElement("input");
         merchantId.type = "hidden";
         merchantId.name = "MerchantId";
@@ -513,7 +531,7 @@ const BookingPage = () => {
             value={rooms}
             onChange={(e) => setRooms(Number(e.target.value))}
           >
-            {[...Array(5).keys()].slice(1).map((n) => (
+            {[...Array(maxAvailableRooms + 1).keys()].slice(1).map((n) => (
               <option key={n} value={n}>
                 {n}
               </option>
@@ -551,7 +569,7 @@ const BookingPage = () => {
           <Calendar size={20} /> Check-in: {checkIn || "--"} | Check-out:{" "}
           {checkOut || "--"}
         </p>
-        <p>💰 Total Amount: ₹{amount + (amount * 12) / 100 || 0}</p>
+        <p>💰 Total Amount: ₹{amount + (amount * 5) / 100 || 0}</p>
       </Summary>
 
       <BookButton
